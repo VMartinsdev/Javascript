@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        #bloco{
+            background-color: red;
+            width: 40px;
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="bloco"></div>
+    <input type="button" value="esq." id="btnEsq">
+    <input type="button" value="dir" id="btnDir">
+
+    <script>
+    
+        const dir = document.getElementById("btnDir")
+    
+        dir.addEventListener('click', movDir)
+        var moviDireita = 5
+    
+        function movDir(){
+            var bloco = document.getElementById('bloco')
+            var moviDireitaMais = moviDireita + "px"
+            bloco.style.marginLeft = moviDireitaMais
+            moviDireita+= 100
+            
+        }
+    
+        
+    </script>
+</body>
+
+</html>
