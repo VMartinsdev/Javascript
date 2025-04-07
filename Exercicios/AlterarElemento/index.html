@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 id="textoAlterar">Este texto sera alterado!!</h1>
+    <input style="width: 400px;" type="text" name="alterar" id="alterar" placeholder="Insira aqui o texto para o Titulo">
+    <input type="button" value="Alterar" id="btnAlterar">
+
+
+    <script>
+        const btnAlterar = document.getElementById("btnAlterar")
+        btnAlterar.addEventListener('click', clicar)
+        function clicar(){
+            var titulo = document.getElementById("textoAlterar")
+            var inputAlterar = document.getElementById("alterar").value
+            console.log(titulo)
+            console.log(inputAlterar)
+
+            titulo.innerHTML = inputAlterar
+        }
+    </script>
+</body>
+</html>
