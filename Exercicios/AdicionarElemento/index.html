@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: inline;
+        }
+        
+
+        
+        #item-1{
+            color: blue;
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            display: inline;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+  
+    <form>
+        <input class="input-item" id="input-item" type="text" placeholder="Digite a tarefa que deseja adicionar"></input>
+        <button class="button-item" id="button-item">Salvar tarefa</button>
+    </form>
+    <ul id="listaDeTarefas">
+
+    </ul>
+    <script>
+        const btnSalvar = document.getElementById("button-item");
+        var iteradorItem = 0;
+
+        btnSalvar.addEventListener("click", (salvarTarefa) =>{
+            salvarTarefa.preventDefault();
+
+
+            const paiDaLista = document.getElementById("listaDeTarefas")
+            var inputTarefa = document.getElementById("input-item");
+            console.log(inputTarefa.value)
+            
+            const itemLista = document.createElement("li");
+
+            const inputDaLista = document.createElement("input")
+            inputDaLista.type = "checkbox";
+            inputDaLista.id = "item-" + iteradorItem ++
+
+            const textoDoItem = document.createElement("p");
+            textoDoItem.innerText = inputTarefa.value;
+            textoDoItem.id = "item-" + iteradorItem ++
+
+            itemLista.appendChild(inputDaLista);
+            itemLista.appendChild(textoDoItem);
+
+            paiDaLista.appendChild(itemLista);
+
+        })
+
+    </script>
+</body>
+</html>
