@@ -1,27 +1,37 @@
-const btnEditar = document.getElementById("btnEditar");
+var btnEditar = document.getElementById("btnEditar");
+var iteradorItem = 0;
 
-btnEditar.addEventListener("click", () => {
+btnEditar.addEventListener("click", (editar) => {
+    
     const btnAdicionar = document.getElementById("btnAdicionar");
     btnAdicionar.style.display = "inline";
-    
-    btnEditar.value = "Concluir"
-    btnEditar.id = "btnConcluir"
-
     const btnConcluir = document.getElementById("btnConcluir");
+    btnEditar.style.display = "none";
+    
+    btnConcluir.style.display = "inline";
 
-    btnConcluir.addEventListener("click", () => {
-        btnConcluir.id = "btnEditar"
-        btnConcluir.value = "Editar"
-        btnAdicionar.style.display = "none";
-        const btnEditar = document.getElementById("btnEditar")
-        
-        return
-    })
+    var btnRemover = document.querySelectorAll(".btnRemover");
 
+    btnRemover.forEach(bt => bt.style.display = "inline")
+    
 
 })
 
+btnConcluir.addEventListener("click", () => {
+    btnAdicionar.style.display = "none";
+    var btnEditar = document.getElementById("btnEditar");
 
+    btnEditar.style.display = "inline";
+
+    btnConcluir.style.display = "none";
+
+    var btnRemover = document.querySelectorAll(".btnRemover");
+
+    btnRemover.forEach(el => el.style.display = "none");
+
+    
+    
+})
 
 const btnAdicionar = document.getElementById("btnAdicionar");
 
@@ -38,8 +48,7 @@ btnAdicionar.addEventListener("click", (adcMusica) => {
     const btnRemover = document.createElement("input")
     btnRemover.type = "button";
     btnRemover.value = "remover"
-    btnRemover.className = ("btnRemover");
-    btnAdicionar
+    btnRemover.classList = ("btnRemover");
 
     btnRemover.addEventListener("click", () => {
         itemDaLista.remove();
