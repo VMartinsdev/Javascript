@@ -2,7 +2,6 @@ const btnAdicionarItem = document.getElementById("adicionar-item");
 var iteradorLista = 0;
 var date = new Date;
 console.log(date.toLocaleString());
-var textoData = document.getElementById("texto-data");
 
 
 btnAdicionarItem.addEventListener("click", (adicionarItem) => {
@@ -40,8 +39,13 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
 
     listaDeCompras.appendChild(itemDalista);
 
-    textoData.innerText = "teste"
+    
 
+    const diaDaSemana = new Date().toLocaleDateString("pt-BR",{ weekday: "long"});
+    const data = new Date().toLocaleDateString("pt-BR")
 
+    const DataCompleta = `${diaDaSemana}(${data})`;
+    console.log(DataCompleta)
+   
 
 })

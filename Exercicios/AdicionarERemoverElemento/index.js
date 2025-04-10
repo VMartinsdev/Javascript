@@ -44,7 +44,7 @@ btnAdicionar.addEventListener("click", (adcMusica) => {
 
     const itemDaLista = document.createElement("li");
     const textoItemDaLista = document.createElement("p");
-    textoItemDaLista.innerText = inputDaMusica.value;
+    textoItemDaLista.textContent = inputDaMusica.value;
     const btnRemover = document.createElement("input")
     btnRemover.type = "button";
     btnRemover.value = "remover"
