@@ -1,7 +1,7 @@
 const btnAdicionarItem = document.getElementById("adicionar-item");
 var iteradorLista = 0;
 
-
+const listaDeCompras = document.getElementById('lista-de-compras')
 
 btnAdicionarItem.addEventListener("click", (adicionarItem) => {
     adicionarItem.preventDefault();
@@ -12,7 +12,7 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
         return
     }
     
-    const listaDeCompras = document.getElementById('lista-de-compras')
+    
 
     console.log(listaDeCompras)
 
@@ -69,9 +69,25 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
         }else{
             nomeItemDaLista.style.textDecoration = "none"
         }
-    })
-    
+    }) 
 
-
-
+    textoLista();  
 })
+
+const semItemLista = document.querySelector(".semItemLista");
+
+function textoLista(){
+    
+    
+    var liDaLista = listaDeCompras.querySelectorAll("li");
+    console.log(liDaLista)
+
+    if(liDaLista.length === 0){
+        semItemLista.style.display = "block"
+    }else{
+        semItemLista.style.display = "none"
+    }
+}
+
+
+textoLista();  

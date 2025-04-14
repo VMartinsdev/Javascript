@@ -40,11 +40,11 @@ const btnAdicionar = document.getElementById("btnAdicionar");
 btnAdicionar.addEventListener("click", (adcMusica) => {
     const listaDeMusicas = document.getElementById("listaDeMusicas");
 
-    var inputDaMusica = document.getElementById("inputDaMusica");
+    var inputDaMusica = document.getElementById("inputDaMusica").value;
 
     const itemDaLista = document.createElement("li");
     const textoItemDaLista = document.createElement("p");
-    textoItemDaLista.textContent = inputDaMusica.value;
+    textoItemDaLista.textContent = inputDaMusica;
     const btnRemover = document.createElement("input")
     btnRemover.type = "button";
     btnRemover.value = "remover"

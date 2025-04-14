@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+    
+        }
+        .checkConfirmado{
+            width: 200px;
+            height: 200px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>CheckBox Iterativo</h1>
+    <input type="checkbox" name="check" id="check">
+    <label for="check" id="labelCheck">Item da lista</label>
+    <script>
+        var lableCheckbox = document.getElementById("labelCheck");
+        var inputCheckBox = document.getElementById("check");
+
+        inputCheckBox.addEventListener("click", (clickCheckbox));
+
+        function clickCheckbox(){
+            if(inputCheckBox.checked){
+                lableCheckbox.style.color = "red"
+                inputCheckBox.classList = "checkConfirmado"
+
+
+            }
+            else{
+                lableCheckbox.style.color = "black"
+                inputCheckBox.classList = ""
+                
+            }
+        }
+    </script>
+</body>
+</html>

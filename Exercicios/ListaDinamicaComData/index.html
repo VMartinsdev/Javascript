@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+    <div id="lista">
+        <input type="text" placeholder="digite o item..." id="inputTexto">
+        <input type="button" value="Adicionar" id="btnAdicionar">
+    </div>
+    <script>
+        var btnAdicionar = document.getElementById("btnAdicionar");
+
+        var horaAtutal = new Date().toLocaleTimeString();
+        var dataAtual = new Date().toLocaleDateString({week: "long"});
+        var dataCompleta = `${dataAtual} às ${horaAtutal}`;
+
+
+        btnAdicionar.addEventListener("click", () =>{
+            var textoInput = document.getElementById("inputTexto").value
+
+            const lista = document.getElementById("lista")
+            
+
+            const inputDalista = document.createElement("input");
+            inputDalista.type = "checkbox";
+            const labelDaLista = document.createElement("label");
+            labelDaLista.innerText = textoInput
+        
+
+            const pDataHora = document.createElement("p");
+            pDataHora.innerText = dataCompleta;
+
+
+
+            lista.appendChild(inputDalista);
+            lista.appendChild(labelDaLista);
+            lista.appendChild(pDataHora);
+            
+
+
+
+            
+            
+
+        })
+    </script>
+</body>
+</html>
