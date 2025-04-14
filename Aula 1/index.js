@@ -1,7 +1,6 @@
 const btnAdicionarItem = document.getElementById("adicionar-item");
 var iteradorLista = 0;
-var date = new Date;
-console.log(date.toLocaleString());
+
 
 
 btnAdicionarItem.addEventListener("click", (adicionarItem) => {
@@ -29,23 +28,50 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
     inputDaLista.type = "checkbox";
     inputDaLista.id = "checkbox-" + iteradorLista++;
 
+    
+
+
     const nomeItemDaLista = document.createElement("p")
     nomeItemDaLista.innerText = produtoAdicionado;
 
     containerDaLista.appendChild(inputDaLista);
     containerDaLista.appendChild(nomeItemDaLista);
 
+
+
+
     itemDalista.appendChild(containerDaLista);
+
+    
+
+    
+    const diaDaSemana = new Date().toLocaleDateString("pt-BR",{ weekday: "long"});
+    const data = new Date().toLocaleDateString("pt-BR")
+    const horaAtutal = new Date().toLocaleTimeString("pt-BR", {
+        hour: "numeric",
+        minute: "numeric"
+    })
+    const DataCompleta = `${diaDaSemana} (${data}) às ${horaAtutal}`;
+    console.log(DataCompleta)
+
+    const dataTexto = document.createElement("p");
+    dataTexto.innerText = DataCompleta;
+    dataTexto.classList = "texto-data"
+
+    itemDalista.appendChild(dataTexto);
 
     listaDeCompras.appendChild(itemDalista);
 
     
+    inputDaLista.addEventListener("click", () =>{
+        if(inputDaLista.checked){
+            nomeItemDaLista.style.textDecoration = "line-through"
+        }else{
+            nomeItemDaLista.style.textDecoration = "none"
+        }
+    })
+    
 
-    const diaDaSemana = new Date().toLocaleDateString("pt-BR",{ weekday: "long"});
-    const data = new Date().toLocaleDateString("pt-BR")
 
-    const DataCompleta = `${diaDaSemana}(${data})`;
-    console.log(DataCompleta)
-   
 
 })
