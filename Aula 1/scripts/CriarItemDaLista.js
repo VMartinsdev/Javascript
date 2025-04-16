@@ -1,23 +1,5 @@
-const btnAdicionarItem = document.getElementById("adicionar-item");
-var iteradorLista = 0;
-
-const listaDeCompras = document.getElementById('lista-de-compras')
-
-btnAdicionarItem.addEventListener("click", (adicionarItem) => {
-    adicionarItem.preventDefault();
-    var produtoAdicionado = document.getElementById("input-item").value;
-
-    if(produtoAdicionado === ""){
-        window.alert("Insira algum valor")
-        return
-    }
-    
-    
-
-    console.log(listaDeCompras)
-
+export function CriarItemDaLista(){
     const itemDalista = document.createElement("li");
-    console.log(itemDalista)
 
     const containerDaLista = document.createElement("div");
     
@@ -52,7 +34,6 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
         minute: "numeric"
     })
     const DataCompleta = `${diaDaSemana} (${data}) às ${horaAtutal}`;
-    console.log(DataCompleta)
 
     const dataTexto = document.createElement("p");
     dataTexto.innerText = DataCompleta;
@@ -61,33 +42,4 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
     itemDalista.appendChild(dataTexto);
 
     listaDeCompras.appendChild(itemDalista);
-
-    
-    inputDaLista.addEventListener("click", () =>{
-        if(inputDaLista.checked){
-            nomeItemDaLista.style.textDecoration = "line-through"
-        }else{
-            nomeItemDaLista.style.textDecoration = "none"
-        }
-    }) 
-
-    textoLista();  
-})
-
-const semItemLista = document.querySelector(".semItemLista");
-
-function textoLista(){
-    
-    
-    var liDaLista = listaDeCompras.querySelectorAll("li");
-    console.log(liDaLista)
-
-    if(liDaLista.length === 0){
-        semItemLista.style.display = "block"
-    }else{
-        semItemLista.style.display = "none"
-    }
 }
-
-
-textoLista();  
