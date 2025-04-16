@@ -1,5 +1,17 @@
+import gerarDataCompleta from "./gerarDataCompleta.js";
+
+var iteradorLista = 0;
+
+
+
 export function CriarItemDaLista(){
+    var produtoAdicionado = document.getElementById("input-item").value;
+    if(produtoAdicionado === ""){
+        window.alert("Insira algum valor")
+        return
+    }
     
+    const listaDeCompras = document.getElementById("lista-de-compras");
     const itemDalista = document.createElement("li");
 
     const containerDaLista = document.createElement("div");
@@ -25,22 +37,24 @@ export function CriarItemDaLista(){
 
     itemDalista.appendChild(containerDaLista);
 
-    
 
-    
-    const diaDaSemana = new Date().toLocaleDateString("pt-BR",{ weekday: "long"});
-    const data = new Date().toLocaleDateString("pt-BR")
-    const horaAtutal = new Date().toLocaleTimeString("pt-BR", {
-        hour: "numeric",
-        minute: "numeric"
-    })
-    const DataCompleta = `${diaDaSemana} (${data}) às ${horaAtutal}`;
+    const dataCompleta = gerarDataCompleta();
 
     const dataTexto = document.createElement("p");
-    dataTexto.innerText = DataCompleta;
+    dataTexto.innerText = dataCompleta;
     dataTexto.classList = "texto-data"
 
     itemDalista.appendChild(dataTexto);
 
-    listaDeCompras.appendChild(itemDalista);
+    
+
+    inputDaLista.addEventListener("click", () =>{
+        if(inputDaLista.checked){
+            nomeItemDaLista.style.textDecoration = "line-through"
+        }else{
+            nomeItemDaLista.style.textDecoration = "none"
+        }
+    }) 
+
+    return itemDalista;
 }
