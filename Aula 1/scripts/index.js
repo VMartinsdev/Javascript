@@ -1,9 +1,12 @@
+import {CriarItemDaLista} from scripts/CriarItemDaLista.js
+
 const btnAdicionarItem = document.getElementById("adicionar-item");
-var iteradorLista = 0;
+
 
 const listaDeCompras = document.getElementById('lista-de-compras')
 
 btnAdicionarItem.addEventListener("click", (adicionarItem) => {
+    CriarItemDaLista(); 
     adicionarItem.preventDefault();
     var produtoAdicionado = document.getElementById("input-item").value;
 
@@ -21,7 +24,8 @@ btnAdicionarItem.addEventListener("click", (adicionarItem) => {
         }
     }) 
 
-    textoLista();  
+    textoLista(); 
+    
 })
 
 const semItemLista = document.querySelector(".semItemLista");
