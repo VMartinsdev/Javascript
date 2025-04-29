@@ -1,0 +1,101 @@
+:root{
+    --backGround: #00090e;
+    --corPrimaria: #211727;
+    --corSecundaria: #e465df;
+    --corFonte: #888888;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: var(--backGround);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#imagem-logo-aside{
+    margin-bottom: 30px;
+}
+
+#menu-lateral{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    background-color: var(--corPrimaria);
+    height: 800px;
+    width: 150px;
+    padding: 40px 16px;
+    border-radius: 20px;
+
+}
+
+
+
+#lista-aside{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 50px;
+}
+
+.itens-lista-aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: var(--corFonte);
+    font-size: 25px;
+
+}   
+
+#itens-lista-aside-destaque{
+    border: 2px solid var(--corSecundaria);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--corSecundaria);
+    cursor: pointer;
+}
+
+#itens-lista-aside-destaque:hover{
+    background-color: var(--corSecundaria);
+    color: var(--corPrimaria);
+}
+
+.itens-lista-aside img{
+    width: 30px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    gap: 20px;
+    background-color: var(--corPrimaria);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+#container-img{
+    background-color: white;
+    border-radius: 10px;
+    height: 350px;
+    width: 500px;
+    padding: 10px 0px;
+
+}
+
+#container-btn-upload{
+    height: 500px;
+    width: 350px;
+}
+
+#container-form{
+    width: 350px;
+}
