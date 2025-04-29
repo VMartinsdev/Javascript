@@ -92,10 +92,34 @@ main{
 }
 
 #container-btn-upload{
-    height: 500px;
-    width: 350px;
+    height: 350px;
+    width: 500px;
 }
 
 #container-form{
     width: 350px;
+}
+
+#btn-upload{
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid var(--corFonte);
+    background-color: var(--corPrimaria);
+    color: var(--corFonte);
+    padding: 16px 12px;
+}
+
+#img-btn-upload{
+    position: relative;
+    top: -35px;
+    left: 340px;
+    margin-bottom: 20px;
+    
+}
+  
+#descricao-upload{
+    color: var(--corFonte);
+    font-size: 15px;
+    display: inline-block;
 }
